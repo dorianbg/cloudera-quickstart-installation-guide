@@ -12,21 +12,24 @@ Installation process:
 
 0. Please adjust the setting of how much RAM is maximally allocated to docker. Probably adding eg. "-m 6G" to docker run as I used below will work but on MacOS Docker you have to change it within GUI preferences. Please set it to 6GB, but don't worry unless you are doing a lot of computation it shouldn't use more than 2-3GB of RAM.
 
-1. Pull the image from docker hub (4.5 GB in size)
+1. 
+Pull the image from docker hub (4.5 GB in size)  
 
-  docker pull cloudera/quickstart:latest
+      docker pull cloudera/quickstart:latest
 
-2. Find the Image ID of the image by running:
-  
-  docker images
+2. 
+  Find the Image ID of the image by running:
+ 
+      docker images
 
-3. Start the container with:
+3. 
+  Start the container with:  
   
-  docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80 -p 8888 -p 7180 [IMAGE ID] /usr/bin/docker-quickstart
+      docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80 -p 8888 -p 7180 [IMAGE ID] /usr/bin/docker-quickstart
   
-  Because port forwarding from the above command didn't work for me on MacOS, I used:  
+  Because port forwarding from the above command didn't work for me on MacOS, I used:    
   
-  docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80:80 -p 8888:8888 -p 7180:7180 [IMAGE ID] /usr/bin/docker-quickstart
+      docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80:80 -p 8888:8888 -p 7180:7180 [IMAGE ID] /usr/bin/docker-quickstart
 
 4. (Re)starting services
 
