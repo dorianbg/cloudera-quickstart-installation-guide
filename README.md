@@ -24,12 +24,23 @@ Installation process:
   
   docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80 -p 8888 -p 7180 [IMAGE ID] /usr/bin/docker-quickstart
   
-  Because port forwarding from the above command didn't work for me on MacOS, I used: 
+  Because port forwarding from the above command didn't work for me on MacOS, I used:  
+  
   docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80:80 -p 8888:8888 -p 7180:7180 [IMAGE ID] /usr/bin/docker-quickstart
 
-4. After the docker container loads up, most likely Hue server failed to load, so just run this to restart it:
+4. (Re)starting services
 
-  sudo service hue restart
+After the docker container loads up, most likely Hue server failed to load, so just run this to restart it:  
+
+    sudo service hue restart  
+  
+Also it is very likely that the Cloudera Manager did not work, so use this command to restart it:  
+  
+      sudo service cloudera-scm-server restart  
+  
+The cloudera manager works on port 7180, and Hue uses port 8888.  
+
+ 
   
 5. Then you can login to Hue by going to localhost:8888 using for both username and password  "cloudera"
 
