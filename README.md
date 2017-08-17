@@ -28,7 +28,7 @@ Installation process:
   
       docker run --hostname=quickstart.cloudera --privileged=true -t -i -m 6G -p 80:80 -p 8888:8888 -p 7180:7180 [IMAGE ID] /usr/bin/docker-quickstart
 
-#### (4. (Re)starting services
+#### 4. (Re)starting services
 
 After the docker container loads up, most likely Hue server failed to load, so just run this to restart it:  
 
@@ -45,22 +45,22 @@ The cloudera manager works on port 7180, and Hue uses port 8888.
 #### 5. Login to Hue by going to localhost:8888 using for both username and password  "cloudera"
 
 
-#### Now that hadoop is working, let's check the files on HDFS:
+##### Now that hadoop is working, let's check the files on HDFS:
 
 ![1](https://github.com/dorianb96/Cloudera_Quickstart_Install/blob/master/1.png?raw=true)
 
-#### We will quickly define a workflow in Hue:
+##### We will quickly define a workflow in Hue:
 
 ![2](https://github.com/dorianb96/Cloudera_Quickstart_Install/blob/master/2.png?raw=true)
 
-#### Using the HDFS action from the tool bar, we will create a folder and a file in HDFS:
+##### Using the HDFS action from the tool bar, we will create a folder and a file in HDFS:
 
 ![3](https://github.com/dorianb96/Cloudera_Quickstart_Install/blob/master/3.png?raw=true)
 
-#### Oozie says it succeeded
+##### Oozie says it succeeded
 
 ![4](https://github.com/dorianb96/Cloudera_Quickstart_Install/blob/master/4.png?raw=true)
 
-#### Let's just check the file succeeded in creation: 
+##### Let's just check the file succeeded in creation: 
 
 ![5](https://github.com/dorianb96/Cloudera_Quickstart_Install/blob/master/5.png?raw=true)
